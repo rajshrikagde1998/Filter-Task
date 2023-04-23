@@ -1,0 +1,38 @@
+<!-- <h3 class="bg-primary text-white p-4 text-center">Pipes</h3> -->
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8 offset-md-2 mt-4">
+          <input type="text" class="form-control searchBar" placeholder="Search by team name..." [(ngModel)]="searchByValue">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Role</th>
+                        <th>Age</th>
+                        <th>Matches Played</th>
+                        <th>Total Runs</th>
+                        <th>Total Wickets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let player of playerArr | filterplayers: searchByValue; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{player.name}}</td>
+                        <td>{{player.country}}</td>
+                        <td>{{player.role}}</td>
+                        <td>{{player.age}}</td>
+                        <td>{{player.matchesPlayed}}</td>
+                        <td>{{player. totalRuns}}</td>
+                        <td>{{player.totalWickets}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
